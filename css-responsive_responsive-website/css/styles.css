@@ -247,12 +247,23 @@ width, etc. */
 /* Replace this comment with your media query. */
 @media (min-width: 767px) {
   /* CSS rules that are only applied when the screen is at least 600px wide and in landscape orientation */
+
   .card-section {
     display: grid;
-    gap: 20px;
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    gap: 12px;
+    grid-template-columns: 1fr 1fr;
+    padding-inline: 24px;
+    column-gap: 16px;
+    text-align: center;
+  }
+  .product-card {
+    width: 100%;
+  }
+  .intro-text {
+    text-align: center;
+    align-self: start;
+    width: 100%;
   }
 }
 /* --- */
@@ -262,7 +273,32 @@ width, etc. */
 /* Replace this comment with your media query. */
 @media (min-width: 1279px) {
   /* CSS rules that are only applied when the screen is at least 600px wide and in landscape orientation */
+
+  .card-section {
+    display: grid;
+    padding-inline: 20px;
+    //*grid-template-columns: repeat (4, 1fr) / 50px 100px;*//
+    grid-template: repeat(4, 1fr);
+    grid-template-areas:
+      "forest forest forest forest"
+      "text text mountain mountain"
+      ". desert desert .";
+    grid-gap: 24px;
+  }
   .--forest {
+    grid-area: forest;
+  }
+  .--desert {
+    grid-area: desert;
+  }
+  .--mountain {
+    grid-area: mountain;
+  }
+  .--ocean {
+    grid-area: mountain;
+  }
+  .intro-text {
+    grid-area: text;
   }
 }
 /* --- */
