@@ -28,7 +28,7 @@ function cleanInput(string) {
 }
 
 const cleanInput = (string) => string.toLowerCase().trim();
-
+//
 const getCurrentHour = () => {
   const now = new Date();
   const currentHour = now.getHours();
@@ -45,6 +45,11 @@ const getCurrentHour = () => {
 
 const getVectorLength = (x, y, z) => (x ** 2 + y ** 2 + z ** 2) ** 0.5;
 
+function cleanInput(string) {
+  return string.toLowerCase().trim();
+}
+
+const cleanInput = (string) => string.toLowerCase().trim();
 /*
 Rewrite the following arrow functions as classic functions.
 
@@ -63,6 +68,16 @@ const isOddAndSmall = (number) => {
   return true;
 };
 
+function isOddAndSmall(number)=> {};
+
 const add3 = (a, b, c) => a + b + c;
 
+function add3(a, b, c) {
+  return a+b +c;
+}
+
 const repeat10 = (string) => string.repeat(10);
+
+function repeat10(string){
+  return string.repeat(10);
+}
