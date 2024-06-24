@@ -17,26 +17,27 @@
       <form>
         <fieldset>
           <legend>Personal Information</legend>
-        <label for="first-name">First name:</label>
+        <label for="first-name">*First name:</label>
         <input for="first-name" id="first-name"></input>
-        <label for="last-name">Last name:</label>
+        <label for="last-name">*Last name:</label>
         <input for="last-name" id="last-name"></input>
         <label for="date-of-birth">Your Birthday</label>
         <input for="date-of-birth" id="date-of-birth" type="date"></input>
       </fieldset>
-      <p>Can you tell us a little bit more? We want to annoy you with unwanted ads.</p>
-      <fieldset>
+      <p id="description-p">Can you tell us a little bit more? We want to annoy you with unwanted ads.</p>
+      <fieldset aria-describedby="description-p">
         <legend>Further Information</legend>
         <label for="favourite-color">Favourite Color:</label>
-        <input for="favourite-color" id="favourite-color"></input> 
+        <input for="favourite-color" id="favourite-color" type="color" id="favourite-color" value="#fff"></input> 
         <label for="favourite-pet">Whats your favourite pet?</label>
         <select>
-          <option value="">--Please choose an option--</option>
+          <option value="" selected disabled>--Please choose an option--</option>
           <option value="">red</option>
           <option value="">green</option>
         </select>
       </fieldset>
-      <button>Submit</button>
+      <button type="submit">Submit</button>
+      </form>
     </section>
   </body>
 </html>
