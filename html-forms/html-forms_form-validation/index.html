@@ -32,6 +32,8 @@
             name="firstName"
             id="first-name"
             placeholder="Your first name"
+            required
+            minlength="1"
           />
 
           <label for="last-name">Last Name</label>
@@ -40,22 +42,23 @@
             name="lastName"
             id="last-name"
             placeholder="Your last name"
+            required
+            minlength="1"
           />
 
           <label for="age">Age</label>
-          <input type="number" name="age" id="age" />
+          <input type="age" name="name-age" id="age" required minlength="1" />
 
           <label for="email">Email</label>
-          <input type="text" name="email" id="email" />
+          <input type="email" name="name-email" id="email" required />
         </fieldset>
 
         <fieldset>
           <legend>Your complaint</legend>
           <label for="complaint">What went wrong?</label>
           <select name="complaint" id="complaint">
-            <option value="nothing" selected>
-              Nothing, everything is fine!
-            </option>
+            <option value="" selected>--Please choose one option--</option>
+            <option value="nothing">Nothing, everything is fine!</option>
             <option value="personal">It's me, not you!</option>
             <option value="broken">
               My product is broken, can you fix it?
