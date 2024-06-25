@@ -11,7 +11,7 @@ Switch the input values of the two input fields when clicking the button
 
 Hint: the HTML entity for the switch button is: &updownarrow
 
-*/
+
 
 const firstInput = document.querySelector('[data-js="first-input"]');
 const uppercaseButton = document.querySelector('[data-js="button-uppercase"]');
@@ -23,4 +23,38 @@ uppercaseButton.addEventListener("click", () => {
 
 lowercaseButton.addEventListener("click", () => {
   firstInput.value = firstInput.value.toLowerCase();
+});
+
+*/
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Assign the input elements to variables
+  const firstInput = document.querySelector('[data-js="first-input"]');
+  const secondInput = document.querySelector('[data-js="second-input"]');
+
+  // Assign the button elements to variables
+  const uppercaseButton = document.querySelector(
+    '[data-js="button-uppercase"]'
+  );
+  const lowercaseButton = document.querySelector(
+    '[data-js="button-lowercase"]'
+  );
+  const switchButton = document.querySelector('[data-js="button-switch"]');
+
+  // Add event listeners to the buttons
+  uppercaseButton.addEventListener("click", () => {
+    firstInput.value = firstInput.value.toUpperCase();
+    secondInput.value = secondInput.value.toUpperCase();
+  });
+
+  lowercaseButton.addEventListener("click", () => {
+    firstInput.value = firstInput.value.toLowerCase();
+    secondInput.value = secondInput.value.toLowerCase();
+  });
+
+  switchButton.addEventListener("click", () => {
+    const switchValue = firstInput.value;
+    firstInput.value = secondInput.value;
+    secondInput.value = switchValue;
+  });
 });
