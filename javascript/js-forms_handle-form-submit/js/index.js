@@ -19,5 +19,6 @@ form.addEventListener("submit", (event) => {
 
   console.log(
     `The age-badness-sum of '${data.age}' is '${data.badness}' result= '${result}'`
+    // console.log(`The age-badness-sum of '${data.firstName}' is {sum}`);
   );
 });
