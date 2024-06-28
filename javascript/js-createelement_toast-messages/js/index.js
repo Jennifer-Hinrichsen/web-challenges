@@ -7,8 +7,8 @@ const clearButton = document.querySelector('[data-js="clear-button"]');
 addButton.addEventListener("click", () => {
   // Exercise: Append a new entry to the toast messages container
   const newToast = document.createElement("div");
-  newToast.classList.add("toast");
-  newToast.textContent = "This is a new toast message!";
+  newToast.classList.add("toast-container__message");
+  newToast.textContent = "Here comes a new toasty message!";
   toastContainer.appendChild(newToast);
 });
 
