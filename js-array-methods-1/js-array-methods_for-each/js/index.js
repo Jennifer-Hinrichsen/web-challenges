@@ -31,11 +31,8 @@ const colors = [
 **/
 function renderColorBox(color) {
   const colorBox = document.createElement("div");
-
   colorBox.classList.add("color-box");
-
   colorBox.style.backgroundColor = color;
-
   document.body.appendChild(colorBox);
 }
 
