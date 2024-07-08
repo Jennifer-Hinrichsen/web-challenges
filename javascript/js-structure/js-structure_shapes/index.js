@@ -1,7 +1,7 @@
 import { getRandomColor } from "./utils/randomColor.js";
 import Circle from "./components/Circle/Circle.js";
-import Square from "./components/Circle/Square.js";
-import Pentagon from "./components/Circle/pentagon.js";
+import Square from "./components/Square/Square.js";
+import Pentagon from "./components/Pentagon/pentagon.js";
 
 console.clear();
 
