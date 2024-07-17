@@ -28,12 +28,47 @@ async function updatePeopleInSpace() {
   if (peopleListElement) {
     peopleListElement.innerHTML = "";
 
-    // Update the list with names of people in space
-    spaceData.people.forEach((person) => {
-      const listItem = document.createElement("li");
-      listItem.textContent = person.name;
-      peopleListElement.appendChild(listItem);
+    let filteredPeople = spaceData.people;
+    const btnAll = document.querySelector('[data-js="btn-All"]');
+    const btnISS = document.querySelector('[data-js="btn-ISS"]');
+    const btnTiangong = document.querySelector('[data-js="btn-Tiangong"]');
+    btnAll.addEventListener("click", () => {
+      filteredPeople = spaceData.people;
+      updateList(filteredPeople);
     });
+
+    btnISS.addEventListener("click", () => {
+      filteredPeople = spaceData.people.filter(
+        (person) => person.craft === "ISS"
+      );
+      updateList(filteredPeople);
+    });
+
+    btnTiangong.addEventListener("click", () => {
+      filteredPeople = spaceData.people.filter(
+        (person) => person.craft === "Tiangong"
+      );
+      updateList(filteredPeople);
+    });
+    updateList(filteredPeople);
+
+    function updateList(people) {
+      // Zuerst alle vorhandenen Listenelemente löschen while = Schleifenstruktur, die wiederholt wird, bis Bedingung wahr ist
+      while (peopleListElement.firstChild) {
+        peopleListElement.removeChild(peopleListElement.firstChild);
+      }
+      people.forEach((person) => {
+        const listItem = document.createElement("li");
+        listItem.textContent = person.name;
+        peopleListElement.appendChild(listItem);
+      });
+    }
+    // Update the list with names of people in space
+    //  spaceData.people.forEach((person) => {
+    //   const listItem = document.createElement("li");
+    //  listItem.textContent = person.name;
+    //   peopleListElement.appendChild(listItem);
+    // });
   }
 }
 updatePeopleInSpace();
