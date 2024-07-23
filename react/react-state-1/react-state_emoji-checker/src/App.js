@@ -7,8 +7,8 @@ export default function App() {
 
   const handleClick = (event) => {
     setCode(code + event.target.textContent);
+    console.log("It Works");
   };
-  console.log(handleClick);
   const handleReset = () => {
     setCode("");
   };
