@@ -1,8 +1,8 @@
 import "./Badge.css";
 
-export default function Badge({ children, isActive }) {
+export default function Badge({ isActive, children }) {
   return (
-    <span className={`badge${isActive ? " badge--active" : ""}`}>
+    <span className={`badge ${isActive ? "badge--active" : ""}`}>
       {children}
     </span>
   );
