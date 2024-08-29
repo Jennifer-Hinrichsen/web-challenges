@@ -1,5 +1,6 @@
 import { volumes } from "@/resources/lib/data";
 import Link from "next/link";
+import Image from "next/image";
 
 const volume = volumes.find(
   ({ slug }) => slug === "the-fellowship-of-the-ring"
@@ -18,6 +19,15 @@ export default function VolumeDetail() {
           </li>
         ))}
       </ul>
+      <div style={{ marginTop: "20px" }}>
+        <Image
+          src={volume.cover}
+          alt="Cover"
+          width={140}
+          height={230}
+          layout="fixed"
+        />
+      </div>
     </div>
   );
 }
