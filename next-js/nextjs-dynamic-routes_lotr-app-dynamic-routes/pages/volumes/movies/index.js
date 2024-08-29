@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { volumes } from "../../lib/data";
+import { volumes } from "../../../lib/data";
 
-export default function VolumesOverview() {
+export default function MoviesOverview() {
   return (
     <div>
       <h1>Lord of the Rings Volumes</h1>
