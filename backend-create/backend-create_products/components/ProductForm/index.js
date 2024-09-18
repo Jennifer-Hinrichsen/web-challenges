@@ -11,7 +11,7 @@ export default function ProductForm() {
     const formData = new FormData(event.target);
     const productData = Object.fromEntries(formData);
 
-    // Send POST request to create a new product
+    // Post request to create a new product
     const response = await fetch("/api/products", {
       method: "POST",
       headers: {
