@@ -5,7 +5,6 @@ import styled from "styled-components";
 
 const Heading = styled.h1`
   text-align: center;
-  color: var(--color-nemo);
 `;
 
 export default function HomePage() {
