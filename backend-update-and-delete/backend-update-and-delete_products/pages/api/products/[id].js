@@ -14,4 +14,23 @@ export default async function handler(request, response) {
 
     response.status(200).json(product);
   }
+
+  if (request.method === "PUT") {
+    try {
+      const updatedProduct = request.body;
+      const product = await Product.findByIdAndUpdate(id, updatedProduct, {
+        new: true, // Return the updated document
+      });
+
+      console.log(product);
+
+      if (!product) {
+        return response.status(404).json({ status: "Not Found" });
+      }
+
+      response.status(200).json({ message: "Product successfully updated." });
+    } catch (error) {
+      response.status(500).json({ error: "Internal Server Error" });
+    }
+  }
 }
